@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.c_dgm_01'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.c_dgm_01"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        manifestPlaceholders = [
+                NAVER_MAPS_API_KEY: "RciJYKNJEyil4CtQsicp4YSdVUIaNVVjTGgR85NB"
+        ]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'com.naver.maps:map-sdk:3.16.0'
+
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //카카오톡
+    implementation "com.kakao.sdk:v2-all:2.13.0" // 전체 모듈 설치, 2.11.0 버전부터 지원
+    implementation "com.kakao.sdk:v2-user:2.13.0" // 카카오 로그인
+    implementation "com.kakao.sdk:v2-talk:2.13.0" // 친구, 메시지(카카오톡)
+    implementation "com.kakao.sdk:v2-story:2.13.0" // 카카오스토리
+    implementation "com.kakao.sdk:v2-share:2.13.0" // 메시지(카카오톡 공유)
+    implementation "com.kakao.sdk:v2-navi:2.13.0" // 카카오내비
+    implementation "com.kakao.sdk:v2-friend:2.13.0" // 카카오톡 소셜 피커, 리소스 번들 파일 포함
+    implementation "com.github.bumptech.glide:glide:4.15.1" // 카카오계정 프로필 사진을 보여주기 위한 glide라이브러리 추가
+    //여기까지
+
+
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-messaging:23.1.2'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

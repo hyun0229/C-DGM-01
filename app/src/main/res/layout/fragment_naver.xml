@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NaverFragment">
+    <com.naver.maps.map.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:id="@+id/map_info_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="#C8E6C9"
+        android:layout_gravity="bottom">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/map_info_name"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="대피소"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/map_info_addr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="주소"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_info_people"
+                android:text="수용인원"
+                android:textSize="12sp"/>
+        </LinearLayout>
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/map_info_button"
+            android:src="@drawable/ic_baseline_navigation_24"
+            android:layout_gravity="center"
+            android:contentDescription="TODO"
+            android:background="#C8E6C9"/>
+        />
+
+    </LinearLayout>
+</FrameLayout>
